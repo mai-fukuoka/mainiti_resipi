@@ -14,16 +14,20 @@ import javax.persistence.Table;
     @NamedQuery(
             name="getAllKaimonolists",
             query="SELECT k FROM Kaimonolist AS k ORDER BY k.id DESC"
-            )  
+            ),
+    @NamedQuery(
+            name = "getKaimonolistsCount",
+            query = "SELECT COUNT(k) FROM Kaimonolist AS k"
+            ),
 })
 
 @Entity
-public class kaimonolist {
+public class Kaimonolist {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
-    
+
     @Column(name="userid",length=255,nullable=false)
     private String userid;
 
