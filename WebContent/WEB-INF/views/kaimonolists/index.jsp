@@ -8,7 +8,7 @@
     <span class="add-btn">add</span>
     </div>
     <ul class="lists"></ul>
-    <div id="update-btn">更新</div>
-    <div id="destroy-btn">削除</div>
+    <span class="update-btn"><a href="<c:url value='/kaimonolists/create' />">更新</a></span>
+    <span class="destroy-btn"><a href="<c:url value='/kaimonolists/destroy' />">全て削除</a></span>
     </c:param>
     </c:import>

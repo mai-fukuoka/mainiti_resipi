@@ -72,21 +72,42 @@ button {
 #footer {
     text-align: center;
 }
-
-.image{
-     text-align: center;
+.imageA{
+ text-align: center;
 }
 
-.box1{
-    margin: 10px auto;
-    border: solid 2px black;
-    width:250;
-    height:250;
+.imageB{
+     max-width: 80%;
+     max-height: 80%;
+     width: auto;
+     height: auto;
+}
+.imageC{
+     max-width: 80%;
+     max-height: 80%;
+     width: auto;
+     height: auto;
+}
+.boxA{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
+    border: 1px solid darkgray;
+    border-radius: 40px;
 }
 
-.image1{
-     text-align: center;
+.boxB{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid darkgray;
+    border-radius: 40px;
 }
 
 .title{
@@ -118,7 +139,7 @@ button {
 .lists{
   list-style: circle;
   width: 50%;
-  height:100px;
+  height:400px;
   margin-top: 1.5rem;
   border:1px solid black;
   margin:10px;
@@ -126,14 +147,52 @@ button {
 
 }
 
+li.list-item{
+  padding: .5rem;
+  font-size: 1.2rem;
+  margin: .5rem 0;
+  background-color: lightgray;
+  position: relative;
+}
+li.list-item:hover{
+  background-color: gray;
+}
+li.list-item:checked{
+  background-color: darkgray;
+}
+li.list-item:checked::before{
+  content: "";
+  top: 10px;
+  left: 16px;
+  background-color: darkgray;
+}
+.close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: .5rem .5rem 0 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.checked{
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
 .update-btn{
- 　　width:27%;
-    text-align: center;
+    width:27%;
     padding: .5rem;
     cursor: pointer;
     background-color: #999999;
     color: white;
 }
-.destroy-btn{
 
+.destroy-btn{
+    width:27%;
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: #999999;
+    color: white;
 }
