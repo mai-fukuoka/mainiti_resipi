@@ -54,8 +54,4 @@ public class Kaimonolist {
         return ingredient;
     }
 
-    public void setIngredient(String ingredient) {
-        this.ingredient = ingredient;
-    }
-
 }
