@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Kaimonolist;
 import utils.DBUtil;
 
 /**
@@ -32,14 +31,14 @@ public class KaimonolistsDestroy extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Kaimonolist k=em.find(Kaimonolist.class, (Integer)(request.getSession().getAttribute("kaimonolist_id")));
+            request.getSession().getAttribute("kaimonolist");
 
             em.getTransaction().begin();
-            em.remove(k);
+            em.remove("kaimonolist");
             em.getTransaction().commit();
             em.close();
 
-            request.getSession().removeAttribute("kaimonolist_id");
+            request.getSession().removeAttribute("kaimonolist");
 
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
             rd.forward(request, response);

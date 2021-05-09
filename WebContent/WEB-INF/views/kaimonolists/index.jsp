@@ -7,7 +7,8 @@
         <div id="list-add-area">
             <input id="list-input-area" type="text" placeholder="what to buy">
             <span class="add-btn">add</span>
-        </div>
+       </div>
+       <form method="GET" action="<c:url value='/kaimonolists/create' />">
         <ul class="lists"></ul>
         <br/>
         <div id="pagination">
@@ -23,15 +24,14 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <div>
-            <span class="update-btn">
-            <form method="GET" action="<c:url value='/kaimonolists/create' />">
+
             <input type="hidden" name="_token" value="${_token}" />
-            <button type="submit">更新</button></form>
-</span>
-                <span class="destroy-btn"><a
-                href="<c:url value='/kaimonolists/destroy' />">全て削除</a></span>
-        </div>
+            <button type="submit" class="button">更新</button></form>
+<br/>
+            <form method="GET" action="<c:url value='/kaimonolists/destroy'  />">
+            <input type="hidden" name="_token" value="${_token}" />
+            <button type="submit" class="button">全て削除</button></form>
+
     </c:param>
 </c:import>
 <!-- TODO:追加 -->

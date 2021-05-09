@@ -180,8 +180,8 @@ li.list-item:checked::before{
   text-decoration: line-through;
 }
 
-.update-btn{
-    width:27%;
+.button{
+    width:10%;
     padding: .5rem;
     cursor: pointer;
     background-color: #999999;

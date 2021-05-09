@@ -37,21 +37,24 @@ public class KaimonolistsCreate extends HttpServlet {
             String userid=request.getParameter("userid");
             k.setUserid(userid);
 
-            String[] ingredient=request.getParameterValues("ingredient");
+            String[] ingredients=request.getParameterValues("todoDate");
+            if(ingredients !=null){
+                for(int i=0; i<ingredients.length; i++){
 
-            em.getTransaction().begin();
-            em.persist(k);
-            em.getTransaction().commit();
-            em.close();
+                    k.setIngredient(ingredients[i]);
+                }
+                em.getTransaction().begin();
+                em.persist(k);
+                em.getTransaction().commit();
+                em.close();
 
-            request.setAttribute("kaimonolist", k);
-            request.setAttribute("_token",request.getSession().getId());
+                request.getSession().setAttribute("kaimonolist", k);
+                request.setAttribute("_token",request.getSession().getId());
 
-            request.getSession().setAttribute("kaimonolist_id", k.getId());
-
-            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
-            rd.forward(request, response);
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
+                rd.forward(request, response);
+            }
         }
-    }
 
+    }
 }
