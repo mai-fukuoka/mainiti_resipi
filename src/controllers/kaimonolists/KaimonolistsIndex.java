@@ -40,8 +40,8 @@ public class KaimonolistsIndex extends HttpServlet {
             page=Integer.parseInt(request.getParameter("page"));
         }catch(NumberFormatException k){}
         List<Kaimonolist>kaimonolists=em.createNamedQuery("getAllKaimonolists",Kaimonolist.class)
-                                        .setFirstResult(15*(page-1))
-                                        .setMaxResults(15)
+                                        .setFirstResult(12*(page-1))
+                                        .setMaxResults(12)
                                         .getResultList();
 
         long kaimonolists_count=(long)em.createNamedQuery("getKaimonolistsCount",Long.class)
@@ -51,6 +51,7 @@ public class KaimonolistsIndex extends HttpServlet {
     request.setAttribute("kaimonolists", kaimonolists);
     request.setAttribute("kaimonolists_count", kaimonolists_count);
     request.setAttribute("page", page);
+    request.setAttribute("_token", request.getSession().getId());
 
 
     RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");

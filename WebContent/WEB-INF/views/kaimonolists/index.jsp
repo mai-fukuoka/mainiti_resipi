@@ -9,11 +9,27 @@
             <span class="add-btn">add</span>
         </div>
         <ul class="lists"></ul>
+        <br/>
+        <div id="pagination">
+            （全 ${kaimonolists_count} 件）
+            <c:forEach var="i" begin="1" end="${((reports_count - 1) / 12) + 1}" step="1">
+                <c:choose>
+                    <c:when test="${i == page}">
+                        <c:out value="${i}" />&nbsp;
+                    </c:when>
+                    <c:otherwise>
+                        <a href="<c:url value='/kiamonolists/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </div>
         <div>
-            <input type="hidden" name="userid" value="${kimonolist.userid }">
-            <span class="update-btn"><a
-                href="<c:url value='/kaimonolists/create' />">更新</a></span> <span
-                class="destroy-btn"><a
+            <span class="update-btn">
+            <form method="GET" action="<c:url value='/kaimonolists/create' />">
+            <input type="hidden" name="_token" value="${_token}" />
+            <button type="submit">更新</button></form>
+</span>
+                <span class="destroy-btn"><a
                 href="<c:url value='/kaimonolists/destroy' />">全て削除</a></span>
         </div>
     </c:param>
