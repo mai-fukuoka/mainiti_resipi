@@ -19,6 +19,11 @@ import javax.persistence.Table;
             name = "getKaimonolistsCount",
             query = "SELECT COUNT(k) FROM Kaimonolist AS k"
             ),
+    @NamedQuery(
+            name="removeAllKaimonolists",
+            query="DELETE FROM Kaimonolist AS k"
+            )
+
 })
 
 @Entity
@@ -28,7 +33,7 @@ public class Kaimonolist {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="userid",length=255,nullable=false)
+    @Column(name="userid",length=255,nullable=true)
     private String userid;
 
     @Column(name="ingredient",length=255, nullable=false)
@@ -50,13 +55,13 @@ public class Kaimonolist {
         this.userid = userid;
     }
 
-    public String getIngredient() {
+    public String  getIngredient() {
         return ingredient;
 
 
     }
 
-    public void setIngredient(String ingredient) {
+    public void setIngredient(String  ingredient) {
         this.ingredient = ingredient;
     }
 
