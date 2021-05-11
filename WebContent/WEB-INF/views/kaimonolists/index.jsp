@@ -9,7 +9,15 @@
             <span class="add-btn">add</span>
        </div>
        <form method="POST" action="<c:url value='/kaimonolists/create' />">
-        <ul class="lists"></ul>
+        <ul class="lists">
+<li class="parent list-item">
+    1111
+    <span class="close">×</span>
+    <input type="hidden" name="todoData" value="${kaimonolist}">
+    <input type="hidden" name="isTodoClick" value="0">
+</li>
+
+        </ul>
         <br/>
         <div id="pagination">
             （全 ${kaimonolists_count} 件）

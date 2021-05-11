@@ -1,7 +1,6 @@
 package controllers.kaimonolists;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Kaimonolist;
 import utils.DBUtil;
 
 /**
@@ -33,8 +31,7 @@ public class KaimonolistsDestroy extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            List<Kaimonolist>kaimonolists=em.createNamedQuery("removeAllKaimonolists",Kaimonolist.class)
-                    .getResultList();
+            em.createNamedQuery("removeAllKaimonolists");
 
             em.close();
 

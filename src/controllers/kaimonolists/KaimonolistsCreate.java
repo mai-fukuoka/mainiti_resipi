@@ -35,23 +35,20 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 
         Kaimonolist k=new Kaimonolist();
 
-        String userid=request.getParameter("userid");
-        k.setUserid(userid);
-
+        em.getTransaction().begin();
         String[] ingredient=request.getParameterValues("todoData");
         if(ingredient !=null){
             for(int i=0; i<ingredient.length; i++){
-
+                k.setUserid(request.getParameter("userid"));
                 k.setIngredient(ingredient[i]);
+                em.persist(k);
             }
-            em.getTransaction().begin();
-            em.persist(k);
+
             em.getTransaction().commit();
             em.close();
 
-            request.getSession().setAttribute("kaimonolist", k);
             request.setAttribute("_token",request.getSession().getId());
-
+            request.getSession().setAttribute("kaimonolist", k);
 
             response.sendRedirect(request.getContextPath() + "/kaimonolists/index");
 }
