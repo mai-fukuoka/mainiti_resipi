@@ -40,8 +40,8 @@ public class KaimonolistsIndex extends HttpServlet {
             page=Integer.parseInt(request.getParameter("page"));
         }catch(NumberFormatException k){}
         List<Kaimonolist>kaimonolists=em.createNamedQuery("getAllKaimonolists",Kaimonolist.class)
-                                        .setFirstResult(12*(page-1))
-                                        .setMaxResults(12)
+                                        .setFirstResult(9*(page-1))
+                                        .setMaxResults(9)
                                         .getResultList();
 
         long kaimonolists_count=(long)em.createNamedQuery("getKaimonolistsCount",Long.class)

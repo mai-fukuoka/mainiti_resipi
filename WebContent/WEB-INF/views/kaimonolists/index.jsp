@@ -10,24 +10,26 @@
        </div>
        <form method="POST" action="<c:url value='/kaimonolists/create' />">
         <ul class="lists">
+        <c:forEach var="kaimonolist" items="${kaimonolists}">
 <li class="parent list-item">
-    1111
+<c:out value="${kaimonolist.ingredient}" />
     <span class="close">×</span>
-    <input type="hidden" name="todoData" value="${kaimonolist}">
+    <input type="hidden" name="todoData" value="${kaimonolist.ingredient }">
     <input type="hidden" name="isTodoClick" value="0">
 </li>
+</c:forEach>
 
         </ul>
         <br/>
         <div id="pagination">
             （全 ${kaimonolists_count} 件）
-            <c:forEach var="i" begin="1" end="${((reports_count - 1) / 12) + 1}" step="1">
+            <c:forEach var="i" begin="1" end="${((kaimonolists_count - 1) / 9) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                        <a href="<c:url value='/kiamonolists/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+<a href="<c:url value='/kaimonolists/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
