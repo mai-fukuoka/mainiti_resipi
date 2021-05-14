@@ -26,7 +26,8 @@ public class KaimonolistsDestroy extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
@@ -35,9 +36,7 @@ public class KaimonolistsDestroy extends HttpServlet {
 
             em.close();
 
-
-            RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
-            rd.forward(request, response);
+            response.sendRedirect(request.getContextPath() + "/kaimonolists/index");
         }
     }
 }

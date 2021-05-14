@@ -9,6 +9,7 @@
             <span class="add-btn">add</span>
        </div>
        <form method="POST" action="<c:url value='/kaimonolists/create' />">
+
         <ul class="lists">
         <c:forEach var="kaimonolist" items="${kaimonolists}">
 <li class="parent list-item">
@@ -40,8 +41,10 @@
 
             <button type="submit" class="button">更新</button></form>
 <br/>
-            <form method="GET" action="<c:url value='/kaimonolists/destroy'  />">
+            <form method="POST" action="<c:url value='/kaimonolists/destroy'  />">
             <input type="hidden" name="_token" value="${_token}" />
+            <input type="hidden" name="userid" value="abc" />
+
             <button type="submit" class="button">全て削除</button></form>
 
     </c:param>

@@ -21,7 +21,7 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name="removeAllKaimonolists",
-            query="DELETE FROM Kaimonolist k WHERE k.userid = :userid"
+            query="DELETE FROM Kaimonolist AS k WHERE k.userid = :userid"
             )
 
 })
