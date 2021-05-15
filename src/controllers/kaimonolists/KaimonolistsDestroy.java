@@ -3,13 +3,13 @@ package controllers.kaimonolists;
 import java.io.IOException;
 
 import javax.persistence.EntityManager;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Kaimonolist;
 import utils.DBUtil;
 
 /**
@@ -31,9 +31,11 @@ public class KaimonolistsDestroy extends HttpServlet {
         String _token = request.getParameter("_token");
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
+            em.getTransaction().begin();
+            em.createNamedQuery("removeAllKaimonolists",Kaimonolist.class)
+                    .setParameter("userid","abc").executeUpdate();
 
-            em.createNamedQuery("removeAllKaimonolists");
-
+            em.getTransaction().commit();
             em.close();
 
             response.sendRedirect(request.getContextPath() + "/kaimonolists/index");

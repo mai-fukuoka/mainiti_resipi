@@ -33,12 +33,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     if(_token !=null && _token.equals(request.getSession().getId())){
         EntityManager em=DBUtil.createEntityManager();
 
-        Kaimonolist k=new Kaimonolist();
-
         em.getTransaction().begin();
+        em.createNamedQuery("removeAllKaimonolists",Kaimonolist.class)
+                .setParameter("userid", "abc").executeUpdate();
+
         String[] ingredient=request.getParameterValues("todoData");
         if(ingredient !=null){
             for(int i=0; i<ingredient.length; i++){
+                Kaimonolist k=new Kaimonolist();
                 k.setUserid(request.getParameter("userid"));
                 k.setIngredient(ingredient[i]);
                 em.persist(k);
@@ -48,7 +50,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             em.close();
 
             request.setAttribute("_token",request.getSession().getId());
-            request.getSession().setAttribute("kaimonolist", k);
 
             response.sendRedirect(request.getContextPath() + "/kaimonolists/index");
 }
