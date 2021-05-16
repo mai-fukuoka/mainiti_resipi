@@ -8,6 +8,8 @@
             <input id="list-input-area" type="text" placeholder="what to buy">
             <span class="add-btn">add</span>
        </div>
+       <c:choose>
+       <c:when test="${kaimonolists !=null }">
        <form method="POST" action="<c:url value='/kaimonolists/create' />">
 
         <ul class="lists">
@@ -38,8 +40,12 @@
 
             <input type="hidden" name="_token" value="${_token}" />
             <input type="hidden" name="userid" value="abc" />
-
-            <button type="submit" class="button">更新</button></form>
+            <button type="submit" id="create" class="button">更新</button></form>
+            </c:when>
+            <c:otherwise>
+            <h2>買うものを入力してください。</h2>
+            </c:otherwise>
+            </c:choose>
 <br/>
             <form method="POST" action="<c:url value='/kaimonolists/destroy'  />">
             <input type="hidden" name="_token" value="${_token}" />

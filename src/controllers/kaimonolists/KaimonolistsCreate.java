@@ -45,14 +45,14 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
                 k.setIngredient(ingredient[i]);
                 em.persist(k);
             }
-
             em.getTransaction().commit();
             em.close();
-
+        }
+    }
             request.setAttribute("_token",request.getSession().getId());
 
             response.sendRedirect(request.getContextPath() + "/kaimonolists/index");
-}
-    }
+
+
 }
 }
