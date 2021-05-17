@@ -3,6 +3,7 @@
 	<persistence-unit name="mainiti_resipi" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>models.Kaimonolist</class>
+		<class>models.User</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver
 "/>
