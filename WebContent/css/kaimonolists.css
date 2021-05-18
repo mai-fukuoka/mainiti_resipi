@@ -1,0 +1,88 @@
+.title{
+    text-align:center;
+}
+
+.list-add-area{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    text-align:center;
+}
+
+#list-input-area{
+
+    width:70%;
+    text-align:center;
+
+}
+
+.add-btn{
+    width:27%;
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: #999999;
+    color: white;
+}
+
+.lists{
+  list-style: none;
+  width: 80%;
+  height:480px;
+  margin-top: 1.5rem;
+  border:1px solid black;
+  padding:10px;
+
+}
+
+li.list-item{
+  padding: .5rem;
+  font-size: 1.2rem;
+  margin: .5rem 0;
+  background-color: lightgray;
+  position: relative;
+}
+li.list-item:hover{
+  background-color: gray;
+}
+li.list-item:checked{
+  background-color: darkgray;
+}
+li.list-item:checked::before{
+  content: "";
+  top: 10px;
+  left: 16px;
+  background-color: darkgray;
+}
+.close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: .5rem .5rem 0 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.checked{
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.button{
+    width:10%;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: #999999;
+    color:white;
+    margin-left:60%
+}
+
+.destroy-btn{
+    width:27%;
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+    background-color: #999999;
+    color: white;
+}
+
