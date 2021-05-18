@@ -23,7 +23,7 @@
 <label for="password">PASSWORD</label><br/>
 <input type="password" name="password"/><br/>
 
-<form method="GET" action="<c:url value='/users/create' />">
+<form method="POST" action="<c:url value='/users/create' />">
 <input type="hidden" name="_token" value="${_token }"/>
 <button type="submit" class="button">登録</button></form>
 
