@@ -14,16 +14,16 @@
     </c:if>
     <div class="new_login">
     <h1>新規登録ページ</h1>
+    <form method="POST" action="<c:url value='/users/create' />">
 <label for="user_id">ユーザーID</label><br/>
 <input type="text" name="user_id" value="${user.user_id }" /><br/>
 
 <label for="name">氏名</label><br/>
-<input type="text" name="name" value="${user_name }"/><br/>
+<input type="text" name="name" value="${user.name }"/><br/>
 
 <label for="password">PASSWORD</label><br/>
 <input type="password" name="password"/><br/>
 
-<form method="POST" action="<c:url value='/users/create' />">
 <input type="hidden" name="_token" value="${_token }"/>
 <button type="submit" class="button">登録</button></form>
 

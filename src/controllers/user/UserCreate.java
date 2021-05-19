@@ -66,7 +66,7 @@ public class UserCreate extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
-            response.sendRedirect(request.getContextPath() + "/users/new");
+            response.sendRedirect(request.getContextPath() + "/index.html");
         }
 
     }
