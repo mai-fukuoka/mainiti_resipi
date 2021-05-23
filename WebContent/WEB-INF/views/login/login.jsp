@@ -19,7 +19,7 @@
                         name="user_id" placeholder="USER ID" value="${user_id}" /></div>
                         <div class="form-item">
                         <label for="password"></label>
-                    <input type="password" name="paassword" placeholder="Password"/></div>
+                    <input type="password" name="password" placeholder="Password"/></div>
                     <div>
                     <input type="hidden" name="_token" value="${_token }" />
                 </div>

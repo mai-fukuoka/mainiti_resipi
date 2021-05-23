@@ -47,14 +47,17 @@ public class LoginFilter implements Filter {
 
             User u=(User)session.getAttribute("login_user");
 
-            if(servlet_path.matches("/kaimonolists.*")){
-                if(u==null){
-                    ((HttpServletResponse)response).sendRedirect(context_path+ "/login");
+            if(!servlet_path.equals("/login")){ //ログイン画面以外で
+                if(!servlet_path.equals("/index.html")){ //トップページ以外にいる時
+                    ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
                     return;
                 }
-            }else{
+            }else{ //ログイン画面で
+                   // ログインしているのにログイン画面を表示させようとした場合は
+                   // システムのトップページにリダイレクト
                 if(u!=null){
                     ((HttpServletResponse)response).sendRedirect(context_path+"/");
+                    return;
                 }
             }
         }
