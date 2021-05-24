@@ -2,21 +2,36 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>まいにちレシピ</title>
-
-<link rel="stylesheet" href="<c:url value='/css/reset.css' />">
-<link rel="stylesheet" href="<c:url value='/css/style.css' />">
-</head>
+<head>${param.header}</head>
 <body>
     <div id="wrapper">
         <div id="header">
-            <h1>まいにちレシピ</h1>
+                <div class="title">
+                    <a href="<c:url value='/'/>"></a>まいにちレシピ
+                </div>
+                           <div id="header_menu">
+                <div id="login">
+                    <c:choose>
+                        <c:when test="${sessionScope.login_user !=null }">
+                            <a href="<c:url value='/logout' />">ログアウト</a>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="<c:url value='/login' />">ログイン</a>
+                        </c:otherwise>
+                    </c:choose>
+                    </div>
+                    &nbsp;&nbsp;
+                    <div id="new">
+                            <a href="<c:url value='/users/new'/>">新規登録</a>
+                    </div>
+                    &nbsp;&nbsp;
+                    <div id="faq"><a>FAQ</a></div>
+            </div>
         </div>
         <div id="content">${param.content}</div>
+        <div id="footer">by MAI FUKUOKA.</div>
     </div>
-    <div id="footer">by MAI FUKUOKA.</div>
+
 
 </body>
 </html>

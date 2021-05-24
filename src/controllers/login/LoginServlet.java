@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
                     (String)this.getServletContext().getAttribute("pepper")
                     );
 
-            // 社員番号とパスワードが正しいかチェックする
+            // ユーザーとパスワードが正しいかチェックする
             try {
                 u = em.createNamedQuery("checkLoginUser_idAndPassword", User.class)
                         .setParameter("user_id", user_id)

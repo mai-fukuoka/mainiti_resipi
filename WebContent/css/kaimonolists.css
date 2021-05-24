@@ -27,7 +27,7 @@
 
 .lists{
   list-style: none;
-  width: 80%;
+  width: 70%;
   height:480px;
   margin-top: 1.5rem;
   border:1px solid black;
@@ -86,3 +86,12 @@ li.list-item:checked::before{
     color: white;
 }
 
+
+h3{
+    width:70%;
+    text-align: center;
+    padding-left: 3%;
+    font-size: 24px;
+    color: #808080;
+    padding-bottom:1%;
+}

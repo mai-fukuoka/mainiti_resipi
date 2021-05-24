@@ -25,12 +25,7 @@ body {
   max-width: 370px;
 }
 
-h1 {
-  text-align: center;
-  padding: 1em 0;
-}
-
-form {
+.form {
   padding: 0 1.5em;
 }
 
@@ -78,4 +73,15 @@ form {
 
 .button:hover {
   background: #ee3e52;
+}
+
+.page{
+  text-align: center;
+  padding: 1em 0;
+  font-size:large;
+}
+
+#flush_error{
+    text-align: center;
+    color:red;
 }

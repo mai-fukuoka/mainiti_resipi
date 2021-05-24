@@ -13,23 +13,23 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
-@Table(name = "kaimonolists")
+@Table(name = "zairyoulists")
 @SqlResultSetMapping(name = "deleteResult", columns = { @ColumnResult(name = "count") })
 @NamedQueries({
-    @NamedQuery(name = "getAllKaimonolists",
-                query = "SELECT k FROM Kaimonolist AS k ORDER BY k.id DESC"),
-    @NamedQuery(name = "getKaimonolistsCount",
-                query = "SELECT COUNT(k) FROM Kaimonolist AS k")
+    @NamedQuery(name = "getAllZairyoulists",
+                query = "SELECT z FROM Zairyoulist AS z ORDER BY z.id DESC"),
+    @NamedQuery(name = "getZairyoulistsCount",
+                query = "SELECT COUNT(z) FROM Zairyoulist AS z")
 })
 @NamedNativeQueries({
-    @NamedNativeQuery(name = "removeAllKaimonolists",
-            query = "DELETE FROM kaimonolists WHERE kaimonolists.userid = :userid",
+    @NamedNativeQuery(name = "removeAllZairyoulists",
+            query = "DELETE FROM zairyoulists WHERE zairyoulists.userid = :userid",
             resultSetMapping = "deleteResult")
-
 })
 
+
 @Entity
-public class Kaimonolist {
+public class Zairyoulist {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

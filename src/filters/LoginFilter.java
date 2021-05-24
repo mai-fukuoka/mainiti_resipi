@@ -48,7 +48,7 @@ public class LoginFilter implements Filter {
             User u=(User)session.getAttribute("login_user");
 
             if(!servlet_path.equals("/login")){ //ログイン画面以外で
-                if(!servlet_path.equals("/index.html")){ //トップページ以外にいる時
+                if(servlet_path.matches("/kaimonolists/index")){ //買い物リストの時
                     ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
                     return;
                 }
