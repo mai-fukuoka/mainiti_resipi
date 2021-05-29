@@ -3,7 +3,7 @@
 <c:import url="../layout/app.jsp">
    <c:param name="header">
         <meta charset="UTF-8">
-        <title>買い物リスト</title>
+        <title>まいにちレシピ</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
    </c:param>

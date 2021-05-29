@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @Table(name="myresipis")
 @NamedQueries({
     @NamedQuery(
-    name="getAllMyresipsis",
+    name="getAllMyresipis",
             query="SELECT m FROM Myresipi AS m ORDER BY m.id DESC"
             ),
     @NamedQuery(
-            name="getMyreipisCount",
+            name="getMyresipisCount",
             query="SELECT COUNT(m) FROM Myresipi AS m"
             ),
 })
@@ -41,6 +41,9 @@ public class Myresipi {
     @Lob
     @Column(name="content",nullable=false)
     private String content;
+
+    @Column(name="coments",nullable=true)
+    private String coments;
 
     public Integer getId() {
         return id;
@@ -72,6 +75,14 @@ public class Myresipi {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getComents() {
+        return coments;
+    }
+
+    public void setComents(String coments) {
+        this.coments = coments;
     }
 
 
