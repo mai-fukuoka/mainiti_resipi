@@ -11,10 +11,13 @@ body {
     background-color: #999999;
     display:flex;
     align-items:center;
-
 }
 
-#header_menu{
+#header a{
+    color: #eeeeee;
+
+}
+#header-menu{
     display:flex;
     float: right;
     width:100%;
@@ -24,7 +27,6 @@ body {
     width:70%;
     padding-left: 3%;
     font-size: 24px;
-    color: #eeeeee;
 
 }
 
@@ -50,9 +52,13 @@ p {
     margin-bottom: 15px;
 }
 
-a {
+.title a {
     text-decoration: none;
-    color: #24738e;
+    color: #eeeeee;
+}
+
+.menu1{
+    display:flex;
 }
 
 table, tr, th, td {
@@ -97,25 +103,4 @@ button {
      max-height: 80%;
      width: auto;
      height: auto;
-}
-.boxA{
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid darkgray;
-    border-radius: 40px;
-}
-
-.boxB {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    border: 1px solid darkgray;
-    border-radius: 40px;
 }

@@ -5,13 +5,13 @@
 <c:import url="../layout/app.jsp">
    <c:param name="header">
         <meta charset="UTF-8">
-        <title>材料リスト</title>
+        <title>食材リスト</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
         <link rel="stylesheet" href="<c:url value='/css/kaimonolists.css' />">
    </c:param>
     <c:param name="content">
-        <div class="name"><h3>材料リスト</h3></div>
+        <div class="name"><h3>食材リスト</h3></div>
         <div id="list-add-area">
             <input id="list-input-area" type="text" placeholder="what to buy">
             <span class="add-btn">add</span>

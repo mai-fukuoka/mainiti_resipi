@@ -12,13 +12,15 @@
         <img src="images/2483944.jpg" alt="料理のイラスト"width="613" height="460">
     </div>
     <br><br>
-    <form method="POST" action="<c:url value='/kaimonolists/index' />">
-    <div class="boxA">
-    <img class="imageB" src="images/757688.png" alt="買い物リスト"width="162" height="100"  >
-    <p >買い物リスト</p>
-    </div></form>
-    <div class="boxB">
+    <div class="menu1">
+    <div class="kaimonolists">
+    <img class="imageB" src="images/152227.png" alt="買い物リスト"width="304" height="173"  >
+    <p > <p><a href="<c:url value='/kaimonolists/index' />">買い物リスト</a></p>
+    </div>
+    <div class="zairyoulists">
     <img class="imageC" src="images/2136715.png" alt="食材リスト"width="109" height="148">
+    <p > <p><a href="<c:url value='/zairyoulists/index' />">食材リスト</a></p>
+    </div>
     </div>
     </c:param>
 

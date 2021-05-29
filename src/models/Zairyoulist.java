@@ -14,7 +14,7 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
 @Table(name = "zairyoulists")
-@SqlResultSetMapping(name = "deleteResult", columns = { @ColumnResult(name = "count") })
+@SqlResultSetMapping(name = "deleteResult2", columns = { @ColumnResult(name = "count") })
 @NamedQueries({
     @NamedQuery(name = "getAllZairyoulists",
                 query = "SELECT z FROM Zairyoulist AS z ORDER BY z.id DESC"),
@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @NamedNativeQueries({
     @NamedNativeQuery(name = "removeAllZairyoulists",
             query = "DELETE FROM zairyoulists WHERE zairyoulists.userid = :userid",
-            resultSetMapping = "deleteResult")
+            resultSetMapping = "deleteResult2")
 })
 
 

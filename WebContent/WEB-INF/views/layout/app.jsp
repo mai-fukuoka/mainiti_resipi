@@ -6,10 +6,10 @@
 <body>
     <div id="wrapper">
         <div id="header">
-                <div class="title">
-                    <a href="<c:url value='/'/>"></a>まいにちレシピ
+                <div class="title" >
+                    <a href="<c:url value='/'/>">まいにちレシピ</a>
                 </div>
-                           <div id="header_menu">
+                           <div id="header-menu">
                 <div id="login">
                     <c:choose>
                         <c:when test="${sessionScope.login_user !=null }">
