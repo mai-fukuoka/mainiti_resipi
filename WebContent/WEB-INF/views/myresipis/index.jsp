@@ -17,7 +17,7 @@
             <tbody>
                 <tr>
                     <th class="id">ID</th>
-                    <th class="resipi_title">タイトル</th>
+                    <th class="resipi_title">料理名</th>
                     <th class="resipi_coments">コメント</th>
                     <th class="resipi_detail">詳細</th>
                 </tr>

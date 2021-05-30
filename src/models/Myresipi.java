@@ -45,8 +45,19 @@ public class Myresipi {
     @Column(name="coments",nullable=true)
     private String coments;
 
+    @Column(name="ingredients",nullable=false)
+    private String ingredients;
+
     public Integer getId() {
         return id;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public void setId(Integer id) {
