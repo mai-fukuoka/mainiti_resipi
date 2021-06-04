@@ -21,13 +21,14 @@
                     <th class="resipi_coments">コメント</th>
                     <th class="resipi_detail">詳細</th>
                 </tr>
+                <c:forEach var="myresipi" items="${myresipis}" varStatus="status">
+                <td><c:out value="${myresipi.id}" /></td>
+                <td><c:out value="${myresipi.title}" /></td>
+                <td><c:out value="${myresipi.coments}" /></td>
+                <td class="report_action">
+                <a href="<c:url value='/myresipis/show?id=${myresipi.id}' />">詳細を見る</a></td>
                 <tr>
-                    <td class="id">${myresipi.id}</td>
-                    <td class="resipi_title">${myresipi.title }</td>
-                    <td class="resipi_coments">${myresipi.coments }</td>
-                    <td class="report_action">
-                    <a href="<c:url value='/myresipis/show?id=${myresipi.id}' />">詳細を見る</a></td>
-                <tr>
+                </c:forEach>
             </tbody>
         </table>
         <div id="pagination">

@@ -1,3 +1,4 @@
+
 package filters;
 
 import java.io.IOException;
@@ -51,10 +52,15 @@ public class LoginFilter implements Filter {
                 if(servlet_path.matches("/kaimonolists/index")){ //買い物リストの時
                     ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
                     return;
+                }else if(servlet_path.matches("myresipis/index")){ //Myresipiの時
+                    ((HttpServletResponse)response).sendRedirect(context_path+"/login");
+                    return;
                 }
-            }else{ //ログイン画面で
-                   // ログインしているのにログイン画面を表示させようとした場合は
-                   // システムのトップページにリダイレクト
+
+            }else{
+              //ログイン画面で
+                // ログインしているのにログイン画面を表示させようとした場合は
+                // システムのトップページにリダイレクト
                 if(u!=null){
                     ((HttpServletResponse)response).sendRedirect(context_path+"/");
                     return;
@@ -65,7 +71,6 @@ public class LoginFilter implements Filter {
         // pass the request along the filter chain
         chain.doFilter(request, response);
     }
-
     /**
      * @see Filter#init(FilterConfig)
      */

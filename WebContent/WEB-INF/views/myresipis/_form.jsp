@@ -16,9 +16,9 @@
 
 <!-- ここに画像を入れたい-->
 
-<div class="ingresients">
-<label for="ingredients">材料</label><br />
-<input type="text" name="ingredients" value="${myresipi.ingredient }"></div>
+<div class="materials">
+<label for="materials">材料</label><br />
+<input type="text" name="materials" value="${myresipi.materials }"></div>
 
 <div class="content">
 <label for="content">作り方</label><br />
@@ -26,8 +26,9 @@
 
 <div class="resipi_coments">
 <label for="coments">コメント</label><br/>
-<input type="text" name="coments" value="${myresipi.coments }">
+<input type="text" name="coments" value="${myresipi.coments}">
 </div>
 
 <input type="hidden" name="_token" value="${_token}" />
+<input type="hidden" name="userid" value="abc" />
 <button type="submit">投稿</button>

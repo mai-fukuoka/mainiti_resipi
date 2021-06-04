@@ -17,7 +17,7 @@ import utils.DBUtil;
 /**
  * Servlet implementation class MyresipiIndexServlet
  */
-@WebServlet("/myresipi/index")
+@WebServlet("/myresipis/index")
 public class MyresipiIndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

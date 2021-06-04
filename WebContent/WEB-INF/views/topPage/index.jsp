@@ -22,6 +22,12 @@
     <p > <p><a href="<c:url value='/zairyoulists/index' />">食材リスト</a></p>
     </div>
     </div>
+    <div class="menu2">
+    <div class="myresipi">
+    <img class="imageB" src="images/757688.png" alt="Myレシピ"width="304" height="173"  >
+    <p > <p><a href="<c:url value='/myresipis/index' />">Myレシピ</a></p>
+    </div>
+    </div>
     </c:param>
 
 </c:import>

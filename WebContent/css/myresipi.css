@@ -52,3 +52,16 @@ table tr:nth-child(odd){
     background-color: #999999;
     color: white;
 }
+
+.title_box{
+    width: 200px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+
+}
+
+.materials_box{
+    width:50%
+}
