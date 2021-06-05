@@ -21,6 +21,10 @@
                 <h2>データは見つかりませんでした。</h2>
             </c:otherwise>
         </c:choose>
+                    <form method="POST" action="<c:url value='/myresipis/destroy'  />">
+            <input type="hidden" name="_token" value="${_token}" />
+            <input type="hidden" name="userid" value="abc" />
+            <button type="submit" class="button">削除</button></form>
 
         <p><a href="<c:url value='/myresipis/index' />">一覧に戻る</a></p>
     </c:param>

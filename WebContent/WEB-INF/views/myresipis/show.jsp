@@ -17,7 +17,7 @@
     <div class="title_box">
     <c:out value="${myresipi.title}"/>
     </div>
-
+ <img src="${pageContext.request.contextPath}/show_image?id=${file.id}">
     <div class="materials_box">
     <table>
     <tbody>

@@ -12,13 +12,11 @@
 </c:if>
 <div class="resipi_title">
 <label for="title">料理名</label><br/>
-<input type="text" name="title" value="${myresipi.title }"></div>
-
-<!-- ここに画像を入れたい-->
+<input type="text" size="20" name="title" value="${myresipi.title }"></div><br/>
 
 <div class="materials">
 <label for="materials">材料</label><br />
-<input type="text" name="materials" value="${myresipi.materials }"></div>
+<textarea rows="10" cols="50">${myresipi.materials }</textarea></div>
 
 <div class="content">
 <label for="content">作り方</label><br />
@@ -26,9 +24,10 @@
 
 <div class="resipi_coments">
 <label for="coments">コメント</label><br/>
-<input type="text" name="coments" value="${myresipi.coments}">
+<input type="text" name="coments" style="width:100%;" value="${myresipi.coments}">
 </div>
-
+<br/>
+<div class="input_btn">
 <input type="hidden" name="_token" value="${_token}" />
 <input type="hidden" name="userid" value="abc" />
-<button type="submit">投稿</button>
+<button type="submit">投稿</button></div>

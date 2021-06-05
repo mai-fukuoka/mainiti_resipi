@@ -17,6 +17,14 @@
             <c:import url="_form.jsp" />
         </form>
 
+        <form method="POST" enctype="multipart/form-data"
+                    action="${pageContext.request.contextPath}/upload">
+                    <input name="uploadFile" type="file"/>
+                    <br>
+                    <br>
+                    <input type="submit" value="送信"/>
+                </form>
+
         <p><a href="<c:url value='/myresipis/index' />">一覧に戻る</a></p>
 
 

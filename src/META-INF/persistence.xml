@@ -6,6 +6,7 @@
 		<class>models.Zairyoulist</class>
 		<class>models.User</class>
 		<class>models.Myresipi</class>
+		<class>models.FileInfo</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver
 "/>
