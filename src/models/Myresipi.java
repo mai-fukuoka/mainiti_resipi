@@ -48,6 +48,17 @@ public class Myresipi {
     @Column(name="materials",nullable=false)
     private String materials;
 
+    @Column(name="file_id",nullable=true)
+    private Integer file_id;
+
+
+    public Integer getFile_id() {
+        return file_id;
+    }
+
+    public void setFile_id(Integer file_id) {
+        this.file_id = file_id;
+    }
 
     public String getMaterials() {
         return materials;

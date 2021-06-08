@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class EntityManagerUtil {
     /**  JPAユニット名. */
-    private static final String PERSISTENCE_UNIT_NAME = "file_upload_system";
+    private static final String PERSISTENCE_UNIT_NAME = "mainiti_resipi";
 
     private static EntityManagerFactory emf;
 

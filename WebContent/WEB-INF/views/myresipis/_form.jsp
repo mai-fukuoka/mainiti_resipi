@@ -16,7 +16,7 @@
 
 <div class="materials">
 <label for="materials">材料</label><br />
-<textarea rows="10" cols="50">${myresipi.materials }</textarea></div>
+<textarea name="materials" rows="10" cols="50">${myresipi.materials}</textarea></div>
 
 <div class="content">
 <label for="content">作り方</label><br />

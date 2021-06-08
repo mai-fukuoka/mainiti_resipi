@@ -43,7 +43,7 @@ public class MyresipiEdit extends HttpServlet {
         if(m != null && login_user.getId() == m.getUser().getId()) {
             request.setAttribute("myresipi", m);
             request.setAttribute("_token", request.getSession().getId());
-            request.getSession().setAttribute("myresipi_id", m.getId());
+            request.setAttribute("myresipi_id", m.getId());
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/myresipis/edit.jsp");

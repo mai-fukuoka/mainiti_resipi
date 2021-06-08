@@ -54,14 +54,29 @@ table tr:nth-child(odd){
 }
 
 .title_box{
-    width: 200px;
-    margin: 5px;
+    width: 50%;
     padding: 10px;
     border: 1px solid black;
     text-align: center;
 
 }
 
-.materials_box{
+table.materials_box{
     width:50%
+}
+
+table.content_box td{
+    height:50%;
+
+}
+
+.images{
+background-size: cover;
+  background-position: center center;
+  width: 50%;
+
+}
+
+.materials_box{
+
 }

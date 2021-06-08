@@ -17,25 +17,32 @@
     <div class="title_box">
     <c:out value="${myresipi.title}"/>
     </div>
- <img src="${pageContext.request.contextPath}/show_image?id=${file.id}">
-    <div class="materials_box">
-    <table>
+    <div class="material_image">
+       <table class="materials_box">
     <tbody>
     <tr>
     <th>材料</th></tr>
     <tr>
    <td><pre><c:out value="${myresipi.materials}"/></pre></td></tr>
     </tbody></table>
+ <img class="images" src="${pageContext.request.contextPath}/show_image?id=${myresipi.file_id}"></div>
+<br/>
+    <table class="content_box">
+    <tbody>
+    <tr>
+    <th>作り方</th></tr>
+    <tr>
+   <td><pre><c:out value="${myresipi.content}" /></pre></td></tr>
+   </tbody>
+   </table>
+    <br/>
 
-    </div>
+    <table class="coments">
+  <tr><th>コメント</th></tr>
+  <tr><td><c:out value="${myresipi.coments}"/></td></tr>
+</table>
 
-    <div class="content_cox">
-    <c:out value="${myresipi.content}" />
-    </div>
-
-    <div class="coments">
-<c:out value="${myresipi.coments}"/>
-</div><br/>
+<br/>
 <p><a href="<c:url value='/myresipis/edit?id=${myresipi.id}' />">このレシピを編集する</a></p>
             </c:when>
             <c:otherwise>

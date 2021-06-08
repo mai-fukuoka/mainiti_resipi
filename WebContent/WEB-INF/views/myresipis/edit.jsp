@@ -16,6 +16,14 @@
                 <form method="POST" action="<c:url value='/myresipis/update' />">
                     <c:import url="_form.jsp" />
                 </form>
+                 <form method="POST" enctype="multipart/form-data"
+                    action="${pageContext.request.contextPath}/upload">
+                    <input name="uploadFile" type="file"/>
+                    <br>
+                    <br>
+                    <input type="hidden" name="id" value="${myresipi_id}" />
+                    <input type="submit" value="送信"/>
+                </form>
             </c:when>
             <c:otherwise>
                 <h2>データは見つかりませんでした。</h2>

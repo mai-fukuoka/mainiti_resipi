@@ -16,6 +16,7 @@ import javax.servlet.http.Part;
 import org.apache.commons.io.IOUtils;
 
 import models.FileInfo;
+import models.Myresipi;
 import utils.EntityManagerUtil;
 
 
@@ -85,7 +86,10 @@ public class FileUploadServlet extends HttpServlet {
             file.setUpdated_at(currentTime); // 更新日時を設定
 
             // ファイル情報を新規追加する
-            em.persist(file);
+            FileInfo savedate = em.merge(file);
+            Myresipi m = em.find(Myresipi.class, Integer.parseInt(request.getParameter("id")));
+            m.setFile_id(savedate.getId());
+            em.persist(m);
 
             // トランザクションをコミット
             em.getTransaction().commit();
@@ -97,8 +101,9 @@ public class FileUploadServlet extends HttpServlet {
             throw e;
         }
 
-        // 一覧にリダイレクトする
-        response.sendRedirect(request.getContextPath() + "/list");
+
+        // 編集画面にリダイレクトする
+        response.sendRedirect(request.getContextPath() + "/myresipis/edit?id=" + request.getParameter("id"));
     }
 
     /**
