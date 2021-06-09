@@ -65,10 +65,6 @@ table.materials_box{
     width:50%
 }
 
-table.content_box td{
-    height:50%;
-
-}
 
 .images{
 background-size: cover;
@@ -77,6 +73,18 @@ background-size: cover;
 
 }
 
-.materials_box{
+.materials_box td{
+    height:15em;
+    overflow-y: scroll
 
+}
+
+.content_box td{
+    height:10em;
+    overflow-y: scroll
+}
+
+.coments td{
+    height:3em;
+    overflow-y: scroll
 }

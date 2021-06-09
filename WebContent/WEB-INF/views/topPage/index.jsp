@@ -14,17 +14,13 @@
     <br><br>
     <div class="menu">
     <div class="kaimonolists">
-    <img class="imageA" src="images/152227.jpg" alt="買い物リスト"width="220" height="220"  >
-    <p > <p><a href="<c:url value='/kaimonolists/index' />">買い物リスト</a></p>
+    <a href="<c:url value='/kaimonolists/index' />"><img class="imageA" src="images/152227.jpg" alt="買い物リスト"width="200" height="200"  ></a>
     </div>
     <div class="zairyoulists">
-    <img class="imageC" src="images/2136715.png" alt="食材リスト"width="200" height="200">
-    <p > <p><a href="<c:url value='/zairyoulists/index' />">食材リスト</a></p>
+    <a href="<c:url value='/zairyoulists/index' />"><img class="imageC" src="images/2136715.png" alt="食材リスト"width="200" height="200"></a>
     </div>
-
     <div class="myresipi">
-    <img class="imageB" src="images/757688.jpg" alt="Myレシピ"width="200" height="200"  >
-    <p > <p><a href="<c:url value='/myresipis/index' />">Myレシピ</a></p>
+    <a href="<c:url value='/myresipis/index' />"><img class="imageB" src="images/757688.jpg" alt="Myレシピ"width="200" height="200"  ></a>
     </div>
     </div>
     </c:param>

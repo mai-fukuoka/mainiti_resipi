@@ -38,7 +38,7 @@ public class MyresipiUpdate extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Myresipi m = em.find(Myresipi.class, (Integer)(request.getSession().getAttribute("myresipi_id")));
+            Myresipi m = em.find(Myresipi.class, (Integer)(request.getAttribute("myresipi_id")));
 
             m.setContent(request.getParameter("content"));
             m.setTitle(request.getParameter("title"));

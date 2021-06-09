@@ -57,9 +57,6 @@ p {
     color: #eeeeee;
 }
 
-.menu{
-    display:flex;
-    widht:100%;
 }
 
 table, tr, th, td {
@@ -93,10 +90,8 @@ button {
  text-align: center;
 }
 
-.imageB{
-
-
+.menu{
+    text-alibn:center;
+    display:flex;
 }
-.imageC{
 
-}

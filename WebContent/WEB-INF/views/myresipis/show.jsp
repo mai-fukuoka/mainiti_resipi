@@ -14,9 +14,11 @@
             <c:when test="${myresipi != null}">
                 <h3>Myレシピ　詳細</h3>
 
+<div class="title_images">
     <div class="title_box">
-    <c:out value="${myresipi.title}"/>
-    </div>
+    <c:out value="${myresipi.title}"/></div>
+    <br/>
+    <img class="images" src="${pageContext.request.contextPath}/show_image?id=${myresipi.file_id}"></div>
     <div class="material_image">
        <table class="materials_box">
     <tbody>
@@ -25,7 +27,7 @@
     <tr>
    <td><pre><c:out value="${myresipi.materials}"/></pre></td></tr>
     </tbody></table>
- <img class="images" src="${pageContext.request.contextPath}/show_image?id=${myresipi.file_id}"></div>
+</div>
 <br/>
     <table class="content_box">
     <tbody>
