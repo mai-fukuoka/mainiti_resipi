@@ -13,7 +13,7 @@
         <div class="name">
             <h3>Myレシピ</h3>
         </div>
-        <table id="myresipi_list">
+        <table class="myresipi_list">
             <tbody>
                 <tr>
                     <th class="id">ID</th>

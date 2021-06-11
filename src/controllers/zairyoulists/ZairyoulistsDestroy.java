@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.User;
 import models.Zairyoulist;
 import utils.DBUtil;
 
@@ -32,11 +33,12 @@ public class ZairyoulistsDestroy extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
+        User login_user = (User)request.getSession().getAttribute("login_user");
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
             em.createNamedQuery("removeAllZairyoulists",Zairyoulist.class)
-                    .setParameter("userid","abc").executeUpdate();
+                    .setParameter("userid",login_user.getUser_id()).executeUpdate();
 
             em.getTransaction().commit();
             em.close();

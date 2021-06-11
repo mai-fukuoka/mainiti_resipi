@@ -16,11 +16,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
     name="getAllMyresipis",
-            query="SELECT m FROM Myresipi AS m ORDER BY m.id DESC"
+            query="SELECT m FROM Myresipi AS m WHERE m.user = :user ORDER BY m.id DESC"
             ),
     @NamedQuery(
             name="getMyresipisCount",
-            query="SELECT COUNT(m) FROM Myresipi AS m"
+            query="SELECT COUNT(m) FROM Myresipi AS m WHERE m.user = :user"
             ),
 })
 

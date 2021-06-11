@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.User;
 import models.Zairyoulist;
 import utils.DBUtil;
 
@@ -34,17 +35,20 @@ public class ZairyoulistsIndex extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            EntityManager em=DBUtil.createEntityManager();
+           User login_user = (User)request.getSession().getAttribute("login_user");
 
             int page=1;
             try{
                 page=Integer.parseInt(request.getParameter("page"));
             }catch(NumberFormatException k){}
             List<Zairyoulist>zairyoulists=em.createNamedQuery("getAllZairyoulists",Zairyoulist.class)
+                                            .setParameter("userid",login_user.getUser_id())
                                             .setFirstResult(9*(page-1))
                                             .setMaxResults(9)
                                             .getResultList();
 
             long zairyoulists_count=(long)em.createNamedQuery("getZairyoulistsCount",Long.class)
+                                            .setParameter("userid",login_user.getUser_id())
                                             .getSingleResult();
         em.close();
 

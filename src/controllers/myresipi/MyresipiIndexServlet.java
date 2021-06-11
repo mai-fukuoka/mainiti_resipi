@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Myresipi;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -34,6 +35,7 @@ public class MyresipiIndexServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em=DBUtil.createEntityManager();
+        User loginUser = (User)request.getSession().getAttribute("login_user");
 
         int page;
         try{
@@ -42,11 +44,13 @@ public class MyresipiIndexServlet extends HttpServlet {
             page = 1;
         }
         List<Myresipi> myresipis = em.createNamedQuery("getAllMyresipis", Myresipi.class)
+                                  .setParameter("userid",loginUser)
                                   .setFirstResult(10 * (page - 1))
                                   .setMaxResults(10)
                                   .getResultList();
 
         long myresipis_count = (long)em.createNamedQuery("getMyresipisCount", Long.class)
+                                     .setParameter("userid",loginUser)
                                      .getSingleResult();
 
         em.close();

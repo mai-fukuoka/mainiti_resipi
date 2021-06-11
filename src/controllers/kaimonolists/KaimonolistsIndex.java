@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Kaimonolist;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -34,17 +35,19 @@ public class KaimonolistsIndex extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em=DBUtil.createEntityManager();
-
+        User login_user = (User)request.getSession().getAttribute("login_user");
         int page=1;
         try{
             page=Integer.parseInt(request.getParameter("page"));
         }catch(NumberFormatException k){}
         List<Kaimonolist>kaimonolists=em.createNamedQuery("getAllKaimonolists",Kaimonolist.class)
+                                        .setParameter("userid",login_user.getUser_id())
                                         .setFirstResult(9*(page-1))
                                         .setMaxResults(9)
                                         .getResultList();
 
         long kaimonolists_count=(long)em.createNamedQuery("getKaimonolistsCount",Long.class)
+                                        .setParameter("userid",login_user.getUser_id())
                                         .getSingleResult();
     em.close();
 

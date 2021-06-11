@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Kaimonolist;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -32,16 +33,17 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     String _token=request.getParameter("_token");
     if(_token !=null && _token.equals(request.getSession().getId())){
         EntityManager em=DBUtil.createEntityManager();
-
+        User login_user = (User)request.getSession().getAttribute("login_user");
         em.getTransaction().begin();
         em.createNamedQuery("removeAllKaimonolists",Kaimonolist.class)
-                .setParameter("userid", "abc").executeUpdate();
+                .setParameter("userid",login_user.getUser_id()).executeUpdate();
 
         String[] ingredient=request.getParameterValues("todoData");
         if(ingredient !=null){
             for(int i=0; i<ingredient.length; i++){
                 Kaimonolist k=new Kaimonolist();
-                k.setUserid(request.getParameter("userid"));
+                k.setUserid(login_user.getUser_id());
+
                 k.setIngredient(ingredient[i]);
                 em.persist(k);
             }

@@ -33,7 +33,7 @@ table tr:nth-child(odd){
 }
 
 .resipi_title{
-    width:30%;
+    width:40%;
 }
 
 .report_action{
@@ -62,7 +62,8 @@ table tr:nth-child(odd){
 }
 
 table.materials_box{
-    width:50%
+    width:50%;
+    margin-left: auto;
 }
 
 
@@ -74,22 +75,29 @@ background-size: cover;
 }
 
 .materials_box td{
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 
 .materials_box pre{
-    height:15em;
+    font-size:large;
+    height:22em;
 }
 
 .content_box td{
-    overflow-y: scroll
+    overflow-y: scroll;
 }
 
 .content_box pre{
+    font-size:large;
     height:10em;
 }
 
 .coments td{
     height:3em;
-    overflow-y: scroll
+    overflow-y: scroll;
+    font-size:large;
+}
+
+.abc{
+    display:flex;
 }

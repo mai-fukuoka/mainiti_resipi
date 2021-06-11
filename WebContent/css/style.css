@@ -63,7 +63,7 @@ table, tr, th, td {
     border: 1px solid #cccccc;
 }
 
-table {
+table.myresipi_list{
     width: 100%;
     table-layout: fixed;
 }
