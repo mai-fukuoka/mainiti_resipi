@@ -74,14 +74,19 @@ background-size: cover;
 }
 
 .materials_box td{
-    height:15em;
     overflow-y: scroll
+}
 
+.materials_box pre{
+    height:15em;
 }
 
 .content_box td{
-    height:10em;
     overflow-y: scroll
+}
+
+.content_box pre{
+    height:10em;
 }
 
 .coments td{

@@ -53,7 +53,10 @@ public class LoginFilter implements Filter {
                 if(servlet_path.matches("/kaimonolists/index")){ //買い物リストの時
                     ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
                     return;
-                }else if(servlet_path.matches("myresipis/index")){ //Myresipiの時
+                }else if(servlet_path.matches("/myresipis/index")){ //Myresipiの時
+                    ((HttpServletResponse)response).sendRedirect(context_path+"/login");
+                    return;
+                }else if(servlet_path.matches("/zairyoulists/index")){ //材料リストの時
                     ((HttpServletResponse)response).sendRedirect(context_path+"/login");
                     return;
                 }

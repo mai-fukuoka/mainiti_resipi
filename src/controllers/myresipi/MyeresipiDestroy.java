@@ -35,7 +35,7 @@ public class MyeresipiDestroy extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Myresipi m = em.find(Myresipi.class, (Integer)(request.getSession().getAttribute("myresipi_id")));
+            Myresipi m = em.find(Myresipi.class, Integer.parseInt(request.getParameter("myresipi_id")));
 
             em.getTransaction().begin();
             em.remove(m);

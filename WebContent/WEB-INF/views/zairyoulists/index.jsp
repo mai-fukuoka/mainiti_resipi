@@ -17,7 +17,7 @@
             <span class="add-btn">add</span>
        </div>
 
-       <form method="POST" action="<c:url value='zairyoulists/create' />">
+       <form method="POST" action="<c:url value='/zairyoulists/create' />">
 
         <ul class="lists">
         <c:forEach var="zairyoulist" items="${zairyoulists}">
