@@ -11,7 +11,7 @@
                 <div class="title" >
                     <a href="<c:url value='/'/>">まいにちレシピ</a>
                 </div>
-                           <div id="header-menu">
+                           <div id="header-menus">
                 <div id="login">
                     <c:choose>
                         <c:when test="${sessionScope.login_user !=null }">
@@ -28,7 +28,7 @@
                     </div>
             </div>
         </div>
-        <div id="content">${param.content}</div>
+        <div id="content">${param.content}</div><br/><br/>
         <div id="footer">by MAI FUKUOKA.</div>
     </div>
 

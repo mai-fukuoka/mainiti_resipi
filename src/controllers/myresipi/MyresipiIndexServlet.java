@@ -44,13 +44,13 @@ public class MyresipiIndexServlet extends HttpServlet {
             page = 1;
         }
         List<Myresipi> myresipis = em.createNamedQuery("getAllMyresipis", Myresipi.class)
-                                  .setParameter("userid",loginUser)
+                                  .setParameter("user",loginUser)
                                   .setFirstResult(10 * (page - 1))
                                   .setMaxResults(10)
                                   .getResultList();
 
         long myresipis_count = (long)em.createNamedQuery("getMyresipisCount", Long.class)
-                                     .setParameter("userid",loginUser)
+                                     .setParameter("user",loginUser)
                                      .getSingleResult();
 
         em.close();
