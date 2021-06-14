@@ -14,7 +14,7 @@
             <c:when test="${myresipi != null}">
                 <h3>Myレシピ　詳細</h3>
 
-<div class="abc">
+<div class="title_image_material">
 <div class="title_images">
     <div class="title_box">
     <c:out value="${myresipi.title}"/></div>

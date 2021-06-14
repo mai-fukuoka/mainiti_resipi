@@ -1,6 +1,4 @@
-.title{
-    text-align:center;
-}
+
 
 h3{
     width:100%;
@@ -58,6 +56,7 @@ table tr:nth-child(odd){
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+    margin-left:240;
 
 }
 
@@ -98,6 +97,8 @@ background-size: cover;
     font-size:large;
 }
 
-.abc{
+.title_image_material{
     display:flex;
+    width:80%;
+    text-align:center;
 }
