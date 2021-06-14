@@ -36,31 +36,33 @@ public class KaimonolistsIndex extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em=DBUtil.createEntityManager();
         User login_user = (User)request.getSession().getAttribute("login_user");
+
+        //ページネーション
         int page=1;
         try{
             page=Integer.parseInt(request.getParameter("page"));
         }catch(NumberFormatException k){}
         List<Kaimonolist>kaimonolists=em.createNamedQuery("getAllKaimonolists",Kaimonolist.class)
-                                        .setParameter("userid",login_user.getUser_id())
-                                        .setFirstResult(9*(page-1))
-                                        .setMaxResults(9)
-                                        .getResultList();
+                .setParameter("userid",login_user.getUser_id())
+                .setFirstResult(9*(page-1))
+                .setMaxResults(9)
+                .getResultList();
 
         long kaimonolists_count=(long)em.createNamedQuery("getKaimonolistsCount",Long.class)
-                                        .setParameter("userid",login_user.getUser_id())
-                                        .getSingleResult();
-    em.close();
+                .setParameter("userid",login_user.getUser_id())
+                .getSingleResult();
+        em.close();
 
-    request.setAttribute("kaimonolists", kaimonolists);
-    request.setAttribute("kaimonolists_count", kaimonolists_count);
-    request.setAttribute("page", page);
-    request.setAttribute("_token", request.getSession().getId());
-
-
-    RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
-    rd.forward(request,response);
+        request.setAttribute("kaimonolists", kaimonolists);
+        request.setAttribute("kaimonolists_count", kaimonolists_count);
+        request.setAttribute("page", page);
+        request.setAttribute("_token", request.getSession().getId());
 
 
+        RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/kaimonolists/index.jsp");
+        rd.forward(request,response);
 
-}
+
+
+    }
 }

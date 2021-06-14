@@ -31,11 +31,13 @@ public class KaimonolistsDestroy extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
         User login_user = (User)request.getSession().getAttribute("login_user");
+
+        //データベースから削除する
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
             em.createNamedQuery("removeAllKaimonolists",Kaimonolist.class)
-                    .setParameter("userid",login_user.getUser_id()).executeUpdate();
+            .setParameter("userid",login_user.getUser_id()).executeUpdate();
 
             em.getTransaction().commit();
             em.close();

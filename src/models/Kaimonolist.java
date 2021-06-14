@@ -17,9 +17,9 @@ import javax.persistence.Table;
 @SqlResultSetMapping(name = "deleteResult", columns = { @ColumnResult(name = "count") })
 @NamedQueries({
     @NamedQuery(name = "getAllKaimonolists",
-                query = "SELECT k FROM Kaimonolist AS k WHERE k.userid = :userid ORDER BY k.id DESC"),
+            query = "SELECT k FROM Kaimonolist AS k WHERE k.userid = :userid ORDER BY k.id DESC"),
     @NamedQuery(name = "getKaimonolistsCount",
-                query = "SELECT COUNT(k) FROM Kaimonolist AS k WHERE k.userid = :userid")
+    query = "SELECT COUNT(k) FROM Kaimonolist AS k WHERE k.userid = :userid")
 })
 @NamedNativeQueries({
     @NamedNativeQuery(name = "removeAllKaimonolists",

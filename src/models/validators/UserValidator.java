@@ -13,20 +13,20 @@ public class UserValidator {
         List<String>errors=new ArrayList<String>();
 
         String user_id_error=validateUser_id(u.getUser_id(),user_idDuplicateCheckFlag);
-            if(!user_id_error.equals("")){
-                errors.add(user_id_error);
-            }
+        if(!user_id_error.equals("")){
+            errors.add(user_id_error);
+        }
 
-            String name_error=validateName(u.getName());
-            if(!name_error.equals("")){
-                errors.add(name_error);
-            }
-            String password_error=validatePassword(u.getPassword(),passwordCheckFlag);
-                if(!password_error.equals("")){
-                    errors.add(password_error);
+        String name_error=validateName(u.getName());
+        if(!name_error.equals("")){
+            errors.add(name_error);
+        }
+        String password_error=validatePassword(u.getPassword(),passwordCheckFlag);
+        if(!password_error.equals("")){
+            errors.add(password_error);
 
-                }
-                return errors;
+        }
+        return errors;
     }
 
     //ユーザーID
@@ -34,7 +34,7 @@ public class UserValidator {
         if(user_id==null ||user_id.equals("")){
             return "ユーザーIDを入力してください。";
         }
-     // すでに登録されているIDとの重複チェック
+        // すでに登録されているIDとの重複チェック
         if(user_idDuplicateCheckFlag){
             EntityManager em=DBUtil.createEntityManager();
             long users_count=(long)em.createNamedQuery("checkRegisteredUser_id",Long.class)

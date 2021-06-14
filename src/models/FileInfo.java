@@ -16,9 +16,9 @@ import org.hibernate.annotations.NamedQuery;
 @Entity
 @NamedQueries({
     @NamedQuery(
-        name = "getAllFiles",
-        query = "SELECT m FROM FileInfo AS m ORDER BY m.updated_at DESC"
-    )
+            name = "getAllFiles",
+            query = "SELECT m FROM FileInfo AS m ORDER BY m.updated_at DESC"
+            )
 })
 /**
  * ファイル情報を管理するEntityクラス.

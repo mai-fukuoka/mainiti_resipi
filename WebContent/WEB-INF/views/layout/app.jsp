@@ -31,8 +31,7 @@
             </div>
         </div>
         <div id="content">${param.content}</div>
-        <br />
-        <br />
+        <br /> <br />
         <div id="footer">by MAI FUKUOKA.</div>
     </div>
 

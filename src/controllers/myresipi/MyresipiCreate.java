@@ -64,7 +64,7 @@ public class MyresipiCreate extends HttpServlet {
                 em.getTransaction().commit();
                 em.close();
 
-        }
+            }
         }
         response.sendRedirect(request.getContextPath() + "/myresipis/index");
     }

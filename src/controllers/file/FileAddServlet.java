@@ -38,6 +38,6 @@ public class FileAddServlet extends HttpServlet {
         // jspに遷移
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/files/add.jsp");
         rd.forward(request, response);
-     }
+    }
 
 }

@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="myresipis")
 @NamedQueries({
     @NamedQuery(
-    name="getAllMyresipis",
+            name="getAllMyresipis",
             query="SELECT m FROM Myresipi AS m WHERE m.user = :user ORDER BY m.id DESC"
             ),
     @NamedQuery(

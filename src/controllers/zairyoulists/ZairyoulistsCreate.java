@@ -36,7 +36,7 @@ public class ZairyoulistsCreate extends HttpServlet {
 
             em.getTransaction().begin();
             em.createNamedQuery("removeAllZairyoulists",Zairyoulist.class)
-                    .setParameter("userid", login_user.getUser_id()).executeUpdate();
+            .setParameter("userid", login_user.getUser_id()).executeUpdate();
 
             String[] ingredient=request.getParameterValues("todoData");
             if(ingredient !=null){
@@ -50,9 +50,9 @@ public class ZairyoulistsCreate extends HttpServlet {
                 em.close();
             }
         }
-                request.setAttribute("_token",request.getSession().getId());
+        request.setAttribute("_token",request.getSession().getId());
 
-                response.sendRedirect(request.getContextPath() + "/zairyoulists/index");
+        response.sendRedirect(request.getContextPath() + "/zairyoulists/index");
 
 
 

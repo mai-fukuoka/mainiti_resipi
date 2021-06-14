@@ -38,7 +38,7 @@ public class ZairyoulistsDestroy extends HttpServlet {
             EntityManager em = DBUtil.createEntityManager();
             em.getTransaction().begin();
             em.createNamedQuery("removeAllZairyoulists",Zairyoulist.class)
-                    .setParameter("userid",login_user.getUser_id()).executeUpdate();
+            .setParameter("userid",login_user.getUser_id()).executeUpdate();
 
             em.getTransaction().commit();
             em.close();

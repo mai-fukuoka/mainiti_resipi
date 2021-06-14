@@ -22,33 +22,33 @@
                     <th class="resipi_detail">詳細</th>
                 </tr>
                 <c:forEach var="myresipi" items="${myresipis}" varStatus="status">
-                <td><c:out value="${myresipi.id}" /></td>
-                <td><c:out value="${myresipi.title}" /></td>
-                <td><c:out value="${myresipi.coments}" /></td>
-                <td class="report_action">
-                <a href="<c:url value='/myresipis/show?id=${myresipi.id}' />">詳細を見る</a></td>
-                <tr>
+                    <td><c:out value="${myresipi.id}" /></td>
+                    <td><c:out value="${myresipi.title}" /></td>
+                    <td><c:out value="${myresipi.coments}" /></td>
+                    <td class="report_action"><a
+                        href="<c:url value='/myresipis/show?id=${myresipi.id}' />">詳細を見る</a></td>
+                    <tr>
                 </c:forEach>
             </tbody>
         </table>
         <div id="pagination">
             （全 ${myresipis_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((myresipis_count - 1) / 10) + 1}"
-                step="1">
+            <c:forEach var="i" begin="1"
+                end="${((myresipis_count - 1) / 10) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                       <a href="<c:url value='/myresipis/index?page=${i}' />"><c:out
+                        <a href="<c:url value='/myresipis/index?page=${i}' />"><c:out
                                 value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
-        <br/>
+        <br />
         <div class="create_btn">
             <a href="<c:url value='/myresipis/new' />">新規レシピの登録</a>
-            </div>
+        </div>
     </c:param>
 </c:import>

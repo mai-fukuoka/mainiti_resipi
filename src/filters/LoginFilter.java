@@ -50,20 +50,20 @@ public class LoginFilter implements Filter {
 
             if(!servlet_path.equals("/login")){ //ログイン画面以外で
                 if (u == null){
-                if(servlet_path.matches("/kaimonolists/index")){ //買い物リストの時
-                    ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
-                    return;
-                }else if(servlet_path.matches("/myresipis/index")){ //Myresipiの時
-                    ((HttpServletResponse)response).sendRedirect(context_path+"/login");
-                    return;
-                }else if(servlet_path.matches("/zairyoulists/index")){ //材料リストの時
-                    ((HttpServletResponse)response).sendRedirect(context_path+"/login");
-                    return;
-                }
+                    if(servlet_path.matches("/kaimonolists/index")){ //買い物リストの時
+                        ((HttpServletResponse)response).sendRedirect(context_path+ "/login"); //ログインするようにする。
+                        return;
+                    }else if(servlet_path.matches("/myresipis/index")){ //Myresipiの時
+                        ((HttpServletResponse)response).sendRedirect(context_path+"/login");
+                        return;
+                    }else if(servlet_path.matches("/zairyoulists/index")){ //材料リストの時
+                        ((HttpServletResponse)response).sendRedirect(context_path+"/login");
+                        return;
+                    }
                 }
 
             }else{
-              //ログイン画面で
+                //ログイン画面で
                 // ログインしているのにログイン画面を表示させようとした場合は
                 // システムのトップページにリダイレクト
                 if(u!=null){
