@@ -16,14 +16,13 @@
     <label for="title">料理名</label><br /> <input type="text" size="20"
         name="title" value="${myresipi.title }">
 </div>
-<br />
 ​
 <div class="materials">
     <label for="materials">材料</label><br />
     <textarea name="materials" rows="10" cols="50">${myresipi.materials}</textarea>
 </div>
 ​
-<div style="width: 50%; height: 50%;">
+<div style="width: 50%; margin:auto;">
     <div class="content">
         <label for="content">作り方</label><br />
         <textarea name="content" rows="10" cols="50">${myresipi.content}</textarea>

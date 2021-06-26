@@ -1,9 +1,8 @@
 
 
 h3{
-    width:100%;
+    width:70%;
     margin:auto;
-    padding-left: 3%;
     font-size: 24px;
     color: #808080;
     padding-bottom:1%;
@@ -32,6 +31,7 @@ table tr:nth-child(odd){
 
 .resipi_title{
     width:40%;
+    margin:auto;
 }
 
 .report_action{
@@ -40,6 +40,7 @@ table tr:nth-child(odd){
 
 .resipi_coments{
     width:45%;
+    margin:auto;
 }
 
 .create_btn a{
@@ -56,7 +57,7 @@ table tr:nth-child(odd){
     padding: 10px;
     border: 1px solid black;
     text-align: center;
-    margin-left:240;
+    margin:auto;
 
 }
 

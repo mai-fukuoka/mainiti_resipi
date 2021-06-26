@@ -26,6 +26,7 @@ body {
     display:flex;
     width:100%;
 }
+
 .title{
     width:70%;
     padding-left: 3%;
@@ -37,6 +38,7 @@ body {
     width: 94%;
     margin-top: 15px;
     padding-left: 3%;
+    text-align:center;
 }
 
 

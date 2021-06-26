@@ -32,7 +32,7 @@
             <input type="hidden" name="_token" value="${_token}" /> <input
                 type="hidden" name="userid" value="abc" /> <input type="hidden"
                 name="myresipi_id" value="${myresipi_id}" />
-            <button type="submit" class="button">削除</button>
+            <button type="submit" style="margin-top:20px; class="button">削除</button>
         </form>
 
         <p>

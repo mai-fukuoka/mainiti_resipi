@@ -24,20 +24,15 @@
                             src="${pageContext.request.contextPath}/show_image?id=${myresipi.file_id}">
                     </div>
                     <br />
-                    <div class="material_image">
-                        <table class="materials_box">
-                            <tbody>
-                                <tr>
-                                    <th>材料</th>
-                                </tr>
-                                <tr>
-                                    <td><pre>
-                                            <c:out value="${myresipi.materials}" />
-                                        </pre></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                      <div class="material_image">
+       <table class="materials_box">
+    <tbody>
+    <tr>
+    <th>材料</th></tr>
+    <tr>
+   <td><pre><c:out value="${myresipi.materials}"/></pre></td></tr>
+    </tbody></table>
+</div>
                 </div>
                 <br />
                 <table class="content_box">
