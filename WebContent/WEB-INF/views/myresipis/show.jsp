@@ -13,7 +13,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${myresipi != null}">
-                <h3>Myレシピ 詳細</h3>
+                <h3 class="page_title">Myレシピ 詳細</h3>
 
                 <div class="title_image_material">
                     <div class="title_images">
@@ -41,7 +41,7 @@
                             <th>作り方</th>
                         </tr>
                         <tr>
-                            <td><pre>
+                            <td><pre style="white-space: pre-wrap ;">
                                     <c:out value="${myresipi.content}" />
                                 </pre></td>
                         </tr>
@@ -54,12 +54,14 @@
                         <th>コメント</th>
                     </tr>
                     <tr>
-                        <td><c:out value="${myresipi.coments}" /></td>
+                        <td>
+                        <pre style="white-space: pre-wrap ;">
+                        <c:out value="${myresipi.coments}" /></pre></td>
                     </tr>
                 </table>
 
                 <br />
-                <p>
+                <p class="edit_btn">
                     <a href="<c:url value='/myresipis/edit?id=${myresipi.id}' />">このレシピを編集する</a>
                 </p>
             </c:when>
@@ -68,7 +70,7 @@
             </c:otherwise>
         </c:choose>
 
-        <p>
+        <p class="back_btn">
             <a href="<c:url value="/myresipis/index" />">一覧に戻る</a>
         </p>
     </c:param>

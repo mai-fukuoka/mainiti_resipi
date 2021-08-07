@@ -36,8 +36,7 @@ body {
 
 #content {
     width: 94%;
-    margin-top: 15px;
-    padding-left: 3%;
+    margin-top: 15px auto;
     text-align:center;
 }
 
@@ -68,10 +67,6 @@ table, tr, th, td {
     border: 1px solid #cccccc;
 }
 
-table.myresipi_list{
-    width: 100%;
-    table-layout: fixed;
-}
 
 th {
     width: 26%;

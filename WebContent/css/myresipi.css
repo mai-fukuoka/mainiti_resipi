@@ -10,6 +10,11 @@ h3{
 
 }
 
+.page_title {
+  color: #6a97d0;
+  border-bottom: 4px dotted #6a97d0;
+}
+
 table{
   width: 100%;
   border-collapse: collapse;
@@ -30,8 +35,11 @@ table tr:nth-child(odd){
 }
 
 .resipi_title{
-    width:40%;
     margin:auto;
+}
+
+.resipi_title input{
+    width:60%;
 }
 
 .report_action{
@@ -39,7 +47,7 @@ table tr:nth-child(odd){
 }
 
 .resipi_coments{
-    width:45%;
+    width:60%;
     margin:auto;
 }
 
@@ -53,25 +61,41 @@ table tr:nth-child(odd){
 }
 
 .title_box{
-    width: 50%;
+    width: 100%;
     padding: 10px;
     border: 1px solid black;
-    text-align: center;
-    margin:auto;
+    text-align: left;
+    color: #fff;
+    background-color: #e95669;
+    font-size: 20px;
 
 }
 
 table.materials_box{
-    width:50%;
+    width:90%;
     margin-left: auto;
 }
 
 
 .images{
-background-size: cover;
-  background-position: center center;
-  width: 50%;
+    background-size: cover;
+    background-position: center center;
+    width: 50%;
 
+}
+
+.title_images,.material_image{
+  width: 50%;
+}
+
+.title_images img {
+  width: 100%;
+}
+
+.materials_box th,.content_box th,.coments th{
+  background-color: #fefc81;
+  color: #6a97d0;
+  font-weight: bold;
 }
 
 .materials_box td{
@@ -81,7 +105,16 @@ background-size: cover;
 .materials_box pre{
     font-size:large;
     height:22em;
+    text-align: justify;
+    padding: 5px;
+    line-height: 30px;
+    white-space: pre-line;
 }
+
+table.content_box {
+  width: 100%;
+}
+
 
 .content_box td{
     overflow-y: scroll;
@@ -90,6 +123,8 @@ background-size: cover;
 .content_box pre{
     font-size:large;
     height:10em;
+    line-height: 40px;
+    padding: 10px;
 }
 
 .coments td{
@@ -98,8 +133,64 @@ background-size: cover;
     font-size:large;
 }
 
+.coments pre {
+  line-height: 30px;
+  padding: 10px;
+
+}
+
 .title_image_material{
     display:flex;
     width:80%;
     text-align:center;
+    margin-top: 20px;
+    margin:auto;
 }
+
+table.myresipi_list{
+    width: 100%;
+    table-layout: fixed;
+}
+
+.edit_btn a,.back_btn a{
+  text-decoration: none;
+  background-color: #84d6c8;
+  color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+
+}
+
+.edit_btn a:hover,.back_btn a:hover{
+  opacity: 0.5;
+}
+
+@media (max-width:768px) {
+  .title_image_material {
+    flex-direction: column;
+  }
+
+  .title_images,.material_image {
+    width: 100%;
+  }
+
+  table.materials_box {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #header {
+    display: block;
+  }
+
+   .title {
+    width:inherit;
+    padding-left: 0px;
+    text-align: center;
+  }
+
+   #header-menus {
+    justify-content: center;
+  }

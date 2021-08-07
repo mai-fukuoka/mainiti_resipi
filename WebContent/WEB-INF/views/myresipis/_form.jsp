@@ -22,7 +22,7 @@
     <textarea name="materials" rows="10" cols="50">${myresipi.materials}</textarea>
 </div>
 ​
-<div style="width: 50%; margin:auto;">
+<div style="margin:auto;">
     <div class="content">
         <label for="content">作り方</label><br />
         <textarea name="content" rows="10" cols="50">${myresipi.content}</textarea>
